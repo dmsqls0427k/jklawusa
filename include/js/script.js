@@ -51,5 +51,19 @@ function FIND(item) {
 	return(false);
 }
 
+function toggle(num) {
+
+  var ans = document.getElementById('answer'+num);
+  var ques = document.getElementById('question'+num);
+  if (ans.style.display === "none") {
+    ans.style.display = "block";
+    ques.src = '../images/collapse.png';
+  } else {
+    ans.style.display = "none";
+    ques.src = "../images/expand.png";
+
+  }
+
+}
 
 //-->
