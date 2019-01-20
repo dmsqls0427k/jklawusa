@@ -15,11 +15,11 @@ body {
   position: fixed;
   top: 0; 
   width: 100%; 
-  height: 120px;
+  height: 135px;
 }
 
 .content {
-  margin-top: 130px;
+  margin-top: 135px;
   padding-bottom:150px;
 }
 
@@ -27,37 +27,60 @@ body {
   width:100%;
   height: 100px;
   padding-top:20px;
-  padding-bottom: 0px;
-  background-color: #0077B5;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 100px;
+  background-color: #606060;
   color:white;
-  text-align:center;
+  text-align:left;
   position:absolute; 
   bottom:0;          
   left:0;           
 
 }
 
+.footer_small {
+  width:100%;
+  height: 100px;
+  padding-top:20px;
+  padding-bottom: 20px;
+  padding-left: 50px;
+  padding-right: 100px;
+  background-color: #606060;
+  color:white;
+  text-align:left;
+  position:fixed; 
+  bottom:0;          
+  left:0;           
+
+}
+
+.icon {
+  width: 32px;
+  height: 32px;
+}
 
 .navbar td { 
-  background-color: #0077B5;
-  border: 2px;
+  background-color: #606060;
   width: 14.28%;
-  height: 50px;
+  height: 60px;
   text-align: center;
   font-size: 12pt;
   font-family: Verdana;
 }
 
-.navbar a {
-  color: #ffffff;
-  text-decoration:none;
+.navbar td:hover {
+ border-bottom: 7px solid #ffb52d;  
+}
+.navbar td:hover > a{
+  font-size: 15pt;
+  text-shadow: 2px 2px 5px white;
 }
 
 
-.navbar a:hover{
-	font-size: 15pt;
-	text-shadow: 2px 2px 5px white;
-
+.navbar a {
+  color: #ffffff;
+  text-decoration:none;
 }
 
 
@@ -72,6 +95,15 @@ width:360px;
 float:right; 
 vertical-align:text-top; 
 text-align:right;
+  background-color: #0077B5;
+  color:white;
+}
+
+.divMainImage {
+  background: url('../../images/homepage.png') no-repeat center center;
+  background-size: cover;
+  width: 100vw;
+  height: 500px; 
 
 }
 
@@ -88,7 +120,8 @@ text-align:right;
 }
 
 .divMainInfo {
-
+width: 100vw;
+height: auto;
 float:left;
 text-align:center;
 }
@@ -116,14 +149,18 @@ text-align:center;
   padding-top: 10px;
   padding-bottom: 10px;
   padding-left: 50px;
-  background-color: #b3daff;
+  background-color: #ffe0b3;
   border-radius: 10px;
   display:block;
 }
 
-.hidden {
-  display: none;
-  opacity: 0;
+.lawyer{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 2%;
+  width: 20%;
+  height: auto;
 }
 
 .question:before {
@@ -131,4 +168,8 @@ text-align:center;
   width: 20px;
   height: 20px;
   padding-right: 15px;
+}
+
+.malito{
+  color:white;
 }
