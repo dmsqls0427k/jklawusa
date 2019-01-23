@@ -3,140 +3,90 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Law & Wisdom - Law Office of Jong K. Lee</title>
+<link href="https://fonts.googleapis.com/css?family=Lato:400,300|Oswald:400,300" rel="stylesheet" type="text/css">
+<link rel="stylesheet" media="screen" href="./w3css/main.css">
 <link rel="stylesheet" type="text/css" href="../include/css/styles.css">
 <link rel='shortcut icon' type='image/x-icon' href='../images/favicon.png' />
+<link rel="stylesheet" href="./w3css/w3.css">
 <script language='javascript' src='../include/js/script.js'></script>
-
-<script language=javascript>
-    function xReset() {
-        var m1, m2, m3, m4;
-        m1 = FIND('ctl_name');
-        m2 = FIND('ctl_email');
-        m3 = FIND('ctl_subject');
-        m4 = FIND('ctl_message');
-
-        m1.value = "";
-        m2.value = "";
-        m3.value = "";
-        m4.value = "";
-
-        return true;
-    }
-
-    function xPost(jobId, targetId) {
-        var strURL = 'HttpInput/Default.aspx';
-        var xmlHttpReq = GetXmlHttpObject();
-        var self = this;
-        var m1, m2, m3, m4;
-        var target = FIND(targetId);
-
-        m1 = FIND('ctl_name').value;
-        m2 = FIND('ctl_email').value;
-        m3 = FIND('ctl_subject').value;
-        m4 = FIND('ctl_message').value;
-        target.innerHTML = "";
-
-        if (m1 == "" || m2 == "" || m3 == "" || m4 == "") {
-            alert('Please fill out all the information.');
-            return false;
-        }
-
-        if (xmlHttpReq == null) {
-            alert("Your browser does not support AJAX!");
-            return false;
-        }
-
-        var button = FIND('bttn_send');
-        button.disabled = true;
-        target.innerHTML = "<b>Prepare for sending your email. Please Wait a moment.</b>";
-
-
-        xmlHttpReq.open('POST', strURL, true);
-        xmlHttpReq.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xmlHttpReq.onreadystatechange = function() {
-            if (xmlHttpReq.readyState == 4) {
-                target.innerHTML = xmlHttpReq.responseText;
-            }
-        }
-        self.xmlHttpReq.send(getquerystring());
-        xmlHttpReq.send('jobId=' + escape(jobId) + '&msg1=' + escape(m1) + '&msg2=' + escape(m2) + '&msg3=' + escape(m3) + '&msg4=' + escape(m4));
-        button.disabled = false;
-    }
-</script>
-
+<script async="" src="https://www.google-analytics.com/analytics.js"></script>
 </head>
 
 <body>
 <div class="bodywrapper">
 <!-- Top Menu Start -->
-    <div class = "navbar">
-        <div class = 'divTopLogo1'><a href="index.html" style = "border: none;"><img src = "../images/main_top_logo1.png" border = "0" /></a></div>
+    <section>
+         <div class = "navbar">
+            <div class = 'divTopLogo1'><a href="index.html" style = "border: none;"><img src = "../images/main_top_logo1.png" border = "0" /></a></div>
 
-        <div class = "dropdown">
-            <button class = "dropbtn">언어 &#9660; </button>
-            <div class = "dropdown-content">
-                <a href = "../lang_en/index.html">영어</a>
-                <a href = "index.html">한국어</a>
+            <div class = "dropdown">
+                <button class = "dropbtn">언어 &#9660; </button>
+                <div class = "dropdown-content">
+                    <a href = "../lang_en/index.html">영어</a>
+                    <a href = "index.html">한국어</a>
+                </div>
             </div>
-        </div>
 
-        <table width = 100%>
-            <tr>
-                <td><a href = "about_lawyer.html" class = "menutext">변호사 소개</a></td>
-                <td><a href = "about_office.html" class = "menutext">사무실 소개</a></td>
-                <td><a href = "about_koreanlaw.html" class = "menutext">한국법</a></td>
-                <td><a href = "about_usimmigration.html" class = "menutext">이민법</a></td>
-                <td><a href = "about_bankruptcy.html" class = "menutext">파산법</a></td>
-                <td><a href = "about_lawqna.html" class = "menutext">법률상담</a></td>
-                <td><a href = "about_contactus.html" class = "menutext">Contact Us</a></td>
-            </tr>
-        </table>
-    </div>
+            <table width = 100%>
+                <tr>
+                    <td><a href = "about_lawyer.html" class = "menutext">변호사 소개</a></td>
+                    <td><a href = "about_office.html" class = "menutext">사무실 소개</a></td>
+                    <td><a href = "about_koreanlaw.html" class = "menutext">한국법</a></td>
+                    <td><a href = "about_usimmigration.html" class = "menutext">이민법</a></td>
+                    <td><a href = "about_bankruptcy.html" class = "menutext">파산법</a></td>
+                    <td><a href = "about_lawqna.html" class = "menutext">법률상담</a></td>
+                    <td><a href = "about_contactus.html" class = "menutext">Contact Us</a></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+   
     <!-- Top Menu End -->
 
     <!-- Middle Body Start -->
-    
-    <center>
-       <div class="content"> 
-        <div class="divMiddleBody">
+    <section style = "margin-top: 150px; margin-left: 20px">
+        <div class="col-md-6" >
+            <h4>Contact Us</h4>
+            <a>상담하시고자 하는 내용을 자세히 적어서 보내주시면 </br> 저희가 2일 안으로 답변해 드리겠습니다.</a>
+    <div class="example-form">
+    <form action="https://postmail.invotes.com/send"
+        method="post" id="email_form">
+        <input type="text" name="extra_name" placeholder="성함">
+        <input type="text" name="reply_to"
+                    placeholder="이메일 주소" />
+        <input type="text" name="subject" placeholder="상담 제목" />
+        <textarea name="text" placeholder="내용"></textarea>
+        <input type="hidden" name="access_token" value="jjtpxzlj9hjiigd9a9jbe356" />
+          <!-- return urls can be fully qualified -OR-
+             start with / for root relative -OR-
+             start with . for url relative --> 
+        <input type="hidden" name="success_url" value="http://www.jklawusa.com/lang_kr/about_contactus.html" />
+        <input type="hidden" name="error_url" value="http://www.jklawusa.com/lang_kr/about_contactus.html" />
+       
 
-            <table width="100%" cellpadding="10" cellspacing="10">
-            <tr>
+        <input id="submit_form" type="submit" value="Send" />
 
-
-        <td style="text-align:left; padding-top:5px; padding-left:5px; ">상담하시고자 하는 내용을 자세히 적어서 보내주시면 저희가 2일 안으로 답변해 드리겠습니다.<br />
-
-
-        <p>&nbsp;</p>
-        <table id="contactus">
-            <tr>
-              <td class="title"><div align="right">성함:</div></td>
-              <td class="input"><input type="text" id="ctl_name" size="70" /></td></tr>
-            <tr>
-              <td class="title"><div align="right">이메일 주소:</div></td>
-              <td class="input"><input type="text" id="ctl_email" size="70" /></td></tr>
-            <tr>
-              <td class="title"><div align="right">상담 제목:</div></td>
-              <td class="input"><input type="text" id="ctl_subject" size="70" /></td></tr>
-            <tr>
-              <td class="title"><div align="right">상담 내용:</div></td>
-              <td class="input"><textarea id="ctl_message" rows="10" cols="58"></textarea></td></tr>
-            <tr><td colspan=2 class="input" align="right"><div id="ctl_result"></div></td></tr>
-            <tr><td colspan=2 class="input" align="right"><input type="button" id="bttn_send" value="Send" onclick="xPost('sendmail', 'ctl_result');" /> <input type="button" id="bttn_reset" value="Reset" onclick="xReset();" /></td></tr>
-            </table>
-        <p>&nbsp;</p>
-
-        </td>
-        </tr>
-        </table>
-            
-        </div>
-        </div>
-    </center>
-
+    </form>
+         
+    <!-- optional, prevents the submit button from being pressed more than once -->
+    <script>
+        var submitButton = document.getElementById("submit_form");
+        var form = document.getElementById("email_form");
+        form.addEventListener("submit", function (e) {
+            setTimeout(function() {
+                submitButton.value = "Sending...";
+                submitButton.disabled = true;
+            }, 1);
+        });
+    </script> 
+   
+    </div>
+    </div>
+</section>
     <!-- Middle Body End -->
 
    <!-- Footer Start -->
+   <section>
     <div class="footer_small">
 
     <table width=50% align="center">
@@ -166,6 +116,8 @@
         </tr>
     </table>
     </div>
+</section>
+    
     <!-- Footer End -->
 </div>
 </body>
